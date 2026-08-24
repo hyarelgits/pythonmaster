@@ -1,0 +1,13 @@
+sentence = "Hyarel sonawane"
+print(sentence.startswith("Hya"))
+print(sentence.startswith("hya"))
+print(sentence.endswith("ne"))
+print(sentence.endswith("Ne"))
+print(sentence.count("Hyarel"))
+print(sentence.count("e"))
+print(sentence.count("a"))
+print(sentence.lower().count("r"))
+print('y' == 'y')
+print('y' == 'Y')
+print(sentence.index('y'))
+print(sentence.find("Hyarel"))
