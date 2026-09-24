@@ -1,0 +1,277 @@
+LangChain + Ollama
+
+LangChain acts as the Agent Brain.
+
+Instead of writing:
+
+
+if "+" in query:
+
+
+LangChain decides automatically.
+
+
+Install
+
+pip install langchain
+pip install langchain-community
+
+Verify:
+
+
+pip list | grep langchain
+
+Project Structure
+
+
+langchain-agent/
+|
+├── main.py
+└── tools.py
+
+tools.py
+
+def calculator(text):
+
+    return eval(text)
+
+
+main.py
+
+from langchain.tools import Tool
+
+from tools import calculator
+
+calc_tool = Tool(
+    name="Calculator",
+    func=calculator,
+    description="Useful for math calculations"
+)
+
+query = input("Ask: ")
+
+result = calc_tool.run(query)
+
+print(result)
+
+------------
+
+python3 main.py
+
+
+Input:
+
+Plain Text
+10+20
+
+output:
+
+Plain Text
+30
+
+
+-----------
+
+
+Real LangChain Agent
+
+Now let's connect Ollama.
+
+Install
+
+pip install langchain-ollama
+
+----------
+
+
+main.py
+
+
+from langchain_ollama import ChatOllama
+
+llm = ChatOllama(
+    model="llama3.2"
+)
+
+question = input("Ask: ")
+
+response = llm.invoke(question)
+
+print(response.content)
+
+
+----------
+
+
+Run:
+
+
+python3 main.py
+
+
+Input:
+
+What is Terraform?
+
+
+Output:
+Terraform is an Infrastructure as Code tool...
+
+
+
+Uses:
+
+
+LLM
+
+
+User:
+10 + 20
+
+Uses:
+
+Calculator Tool
+
+
+          User
+            |
+            v
+      LangChain Agent
+            |
+  ---------------------
+  |                   |
+  v                   v
+Calculator        Llama3.2
+Tool                LLM
+  |                   |
+  ---------------------
+            |
+            v
+         Response
+
+
+
+Why LangChain?
+
+
+Without LangChain:
+
+if "+" in query:
+
+
+
+You write all the logic.
+
+
+With LangChain:
+
+Agent decides:
+Should I use a Tool?
+Should I ask the LLM?
+
+
+Beginner Learning Sequence
+
+
+
+Python
+Functions
+Modules
+Dictionary
+
+
+Build:
+
+
+Calculator
+Memory App
+Menu App
+
+
+Stage 2
+
+
+Ollama
+Llama3.2
+
+Build:
+
+
+Simple Chatbot
+
+
+---------
+
+
+Stage 3
+
+
+LangChain
+Tools
+Agents
+
+
+Build:
+
+
+Calculator Agent
+Weather Agent
+Terraform Agent
+
+
+
+Stage 4
+
+RAG
+Vector DB
+
+Build:
+
+
+PDF Question Answer Bot
+
+
+--------------
+
+
+Stage 5
+
+CrewAI
+Multi-Agent
+
+
+Build:
+
+
+
+Terraform Generator Agent
+DevOps Agent
+Cloud Operations Agent
+
+
+For your Terraform background, the best first LangChain project is:
+
+
+
+User:
+Create Azure Storage Account
+
+LangChain Agent:
+   |
+   +--> Llama3.2
+   |
+   +--> Terraform Tool
+   |
+   +--> Generate Code
+``
+
+
+his teaches the core concepts of LLM + Tools + Agent, which is the foundation of modern AI Agents.
+
+Provide your feedback on BizChat
+
+
+
+
+
+
