@@ -236,9 +236,174 @@ Result: 30
 
 ---------------
 
+expalin abobe example in depth
+Let's understand this example as a beginner AI Agent project.
+
+Project Structure
+
+pythonagent1/
+│
+├── main.py
+├── tools.py
+└── memory.py
+
+Think of it like this:
+
+tools.py → Contains functions (tools)
+memory.py → Stores memory/data
+main.py → Main program that uses tools and memory
+
+
+1. tools.py
+
+def calculator(a, b):
+    return a + b
+
+Explanation
+
+Here we create a function called calculator.
+
+calculator(10, 20)
+
+means:
+
+
+10 + 20 = 30
+The function returns the result.
+
+2. memory.py
+
+memory = {}
+
+Explanation
+
+This is a Python dictionary.
+
+memory = {}
+
+creates empty memory.
+
+memory = {
+    "user": "Hyarel"
+}
+
+The agent can store information inside this dictionary.
+
+
+3. main.py
+
+from tools import calculator
+from memory import memory
+
+
+Explanation
+
+Importing code from other files.
+
+from tools import calculator
+
+Use calculator() from tools.py
+
+from memory import memory
+
+Use memory variable from memory.py
+
+Store Data in Memory
+
+memory["user"] = "Hyarel"
+
+Dictionary becomes:
+
+{
+    "user": "Hyarel"
+}
+
+The agent now remembers the user name.
+
+Use Calculator Tool
+
+result = calculator(10, 20)
+Python calls:
+calculator(10,20)
+
+Inside function:
+return 10 + 20
+
+Result:
+result = 30
 
 
 
+Print Output
+
+print("User:", memory["user"])
+
+Looks inside memory:
+memory["user"]
+
+Value:
+Hyarel
+
+print("Result:", result)
+
+Result: 30
+
+
+Start Program
+      |
+      v
+Import calculator()
+      |
+      v
+Import memory
+      |
+      v
+Store user in memory
+      |
+      v
+Call calculator(10,20)
+      |
+      v
+Get result = 30
+      |
+      v
+Display output
+      |
+      v
+End
+
+
+-----------
+
+Real AI Agent Version
+
+Later you'll replace the simple calculator with an LLM (GPT/OpenAI).
+
+User Question
+      |
+      v
+AI Agent
+      |
+      +--> Memory
+      |
+      +--> Tools
+      |
+      +--> LLM
+      |
+      v
+Response
+For now, remember:
+
+tools.py = Agent's skills/tools
+memory.py = Agent's memory
+main.py = Agent's brain/controller
+
+This is the simplest agent architecture and a great first step before learning OpenAI, LangChain, or CrewAI.
+
+----------------------------------------------------
+
+
+-----------------------------------------------------------
 Week 1 Learning Plan
 
 Day 1
