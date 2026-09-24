@@ -1,0 +1,48 @@
+Copilot
+
+The error in your screenshot is:
+
+Plain Text
+ImportError: cannot import name 'Tool' from 'langchain.tools'
+Show more lines
+
+This usually happens because:
+
+LangChain is not installed correctly, or
+You're using a newer LangChain version where imports changed.
+Check Your Version
+
+Run:
+
+
+pip3 show langchain
+
+
+
+python3 -c "import langchain; print(langchain.__version__)"
+
+Install Required Packages
+
+pip install -U langchain langchain-community langchain-core langchain-ollama
+
+Test LangChain
+
+Create test_langchain.py:
+
+Python
+from langchain_core.tools import Tool
+ 
+print("LangChain working")
+Show more lines
+
+Run:
+
+Shell
+python3 test_langchain.py
+ 
+Show more lines
+
+Expected:
+
+Plain Text
+LangChain working
