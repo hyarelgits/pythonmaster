@@ -1,0 +1,170 @@
+write a LLM program for rerive xls data , aatch xls file
+
+Install Packages
+
+pip install pandas openai openpyxl
+
+
+employees.xlsx
+
+
+
+EmpIDNameDepartmentSalary
+
+EmpID	Name	Department	Salary101	John	IT	50000
+102	David	HR	45000
+103	Smith	IT	60000
+
+
+Python Program
+
+import pandas as pd
+from openai import OpenAI
+
+# Initialize OpenAI Client
+client = OpenAI(
+    api_key="YOUR_API_KEY"
+)
+
+# Read Excel File
+excel_file = "employees.xlsx"
+df = pd.read_excel(excel_file)
+
+print("Excel Data Loaded Successfully")
+print(df)
+
+while True:
+    question = input("\nAsk a question about the Excel data (or type exit): ")
+
+    if question.lower() == "exit":
+        break
+
+    # Convert dataframe to text
+    data_text = df.to_string(index=False)
+
+    prompt = f"""
+    You are an Excel data analyst.
+
+    Excel Data:
+    {data_text}
+
+    User Question:
+    {question}
+
+    Provide a clear answer based on the Excel data.
+    """
+
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+            {"role": "user", "content": prompt}
+        ]
+    )
+
+    print("\nAnswer:")
+    print(response.choices[0].message.content)
+
+
+---------------
+
+
+python excel_llm.py
+
+Input:
+
+Ask a question:
+What is the average salary?
+``
+
+output
+
+The average salary is 51666.67.
+
+
+------
+
+
+Local LLM Version (Ollama)
+
+
+Install:
+
+
+ollama pull llama3.2
+pip install ollama pandas openpyxl
+
+-------------------
+
+import pandas as pd
+import ollama
+
+df = pd.read_excel("employees.xlsx")
+
+while True:
+    question = input("Ask Question: ")
+
+    if question.lower() == "exit":
+        break
+
+    prompt = f"""
+    Excel Data:
+    {df.to_string(index=False)}
+
+    Question:
+    {question}
+    """
+
+    response = ollama.chat(
+        model='llama3.2',
+        messages=[
+            {'role': 'user', 'content': prompt}
+        ]
+    )
+
+    print(response['message']['content'])
+
+----------
+
+
+How many employees are in IT?
+
+Who has the highest salary?
+
+What is the average salary?
+
+List all employees from HR.
+-------------
+
+create .xlsx file
+
+Create create_excel.py:
+
+
+pip install pandas openpyxl
+
+
+Create create_excel.py:
+
+
+
+import pandas as pd
+
+data = {
+    "EmpID": [101, 102, 103],
+    "Name": ["John", "David", "Smith"],
+    "Department": ["IT", "HR", "IT"],
+    "Salary": [50000, 45000, 60000]
+}
+
+df = pd.DataFrame(data)
+
+df.to_excel("employees.xlsx", index=False)
+
+print("Excel file created successfully!")
+
+
+
+python3 create_excel.py
+
+
+ls -l employees.xlsx
