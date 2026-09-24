@@ -1,0 +1,391 @@
+For the first stage (beginner level), don't start with OpenAI, LangChain, or CrewAI immediately.
+
+Learn AI Agents in this sequence:
+
+Python Basics
+      ↓
+Functions
+      ↓
+Dictionaries & Lists
+      ↓
+User Input
+      ↓
+Modules
+      ↓
+Simple Logic-Based Agent
+      ↓
+Tool-Based Agent
+      ↓
+OpenAI API
+
+
+
+Stage 1: Your First AI Agent
+Goal
+
+Create a simple agent that:
+
+Takes user input
+Understands the request
+Performs an action
+Returns a response
+
+
+
+Example 1: Hello Agent
+agent.py
+
+query = input("Ask me something: ")
+
+if query.lower() == "hello":
+    print("Hi, I am your AI Agent")
+else:
+    print("I don't understand")
+
+
+Run
+
+python agent.py
+
+Output
+
+Ask me something: hello
+
+Hi, I am your AI Agent
+
+
+
+
+
+--------------------
+
+
+Example 2: Calculator Agent
+agent.py
+
+num1 = int(input("Enter First Number: "))
+num2 = int(input("Enter Second Number: "))
+
+result = num1 + num2
+
+print("Result =", result)
+
+
+Output
+
+
+Enter First Number: 10
+Enter Second Number: 20
+
+Result = 30
+
+-----------------------
+
+
+Example 3: Weather Agent (Dummy)
+
+
+city = input("Enter City: ")
+
+print(f"Weather for {city}: Sunny")
+
+
+Output:
+
+Enter City: Mumbai
+
+Weather for Mumbai: Sunny
+
+
+-------------------------
+
+
+Example 4: Menu Agent
+
+
+menu = {
+    "pizza": 300,
+    "burger": 150,
+    "pasta": 250
+}
+
+item = input("Enter Item: ").lower()
+
+if item in menu:
+    print("Price =", menu[item])
+else:
+    print("Item not available")
+
+
+Output:
+
+Enter Item: pizza
+
+Price = 300
+
+-------------------
+
+
+
+Example 5: Infrastructure Agent
+
+Since you work with Terraform, try this beginner project.
+
+
+
+resource = input(
+    "Enter Resource Type: "
+)
+
+if resource.lower() == "storage":
+    print(
+        "Generate Storage Account Terraform Code"
+    )
+elif resource.lower() == "vm":
+    print(
+        "Generate VM Terraform Code"
+    )
+else:
+    print(
+        "Resource not supported"
+    )
+
+
+Output:
+
+
+Enter Resource Type: storage
+
+Generate Storage Account Terraform Code
+
+
+
+------------------
+
+
+
+Example 6: Memory Agent
+
+
+memory = {}
+
+name = input("Enter Your Name: ")
+
+memory["name"] = name
+
+print("Welcome", memory["name"])
+
+
+Output:
+
+
+Enter Your Name: Hyarel
+
+Welcome Hyarel
+
+
+-------------------------------
+
+
+
+Beginner AI Agent Project Structure
+
+
+ai-agent/
+│
+├── main.py
+├── tools.py
+└── memory.py
+
+
+
+tools.py
+
+def calculator(a, b):
+    return a + b
+
+
+memory.py
+
+memory = {}
+
+
+main.py
+
+from tools import calculator
+from memory import memory
+
+memory["user"] = "Hyarel"
+
+result = calculator(10, 20)
+
+print("User:", memory["user"])
+print("Result:", result)
+
+
+Run:	
+
+python main.py
+
+
+Output:
+
+
+User: Hyarel
+Result: 30
+
+---------------
+
+
+
+
+Week 1 Learning Plan
+
+Day 1
+
+Learn:
+
+Variables
+Input/Output
+Data Types
+
+
+practice 
+
+name = input("Name: ")
+print(name)
+
+
+
+
+Day 2
+
+
+Learn:
+
+if
+else
+elif
+
+Practice:
+
+
+age = 18
+
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+
+
+Day 3
+
+Learn:
+
+for loop
+while loop
+
+Practice:
+
+
+for i in range(5):
+    print(i)
+
+
+Day 4
+
+Learn:
+
+Functions
+
+Practice:
+
+
+def add(a, b):
+    return a + b
+
+print(add(10, 20))
+
+
+
+Day 5
+
+Learn:
+
+List
+Dictionary
+
+Practice:
+
+student = {
+    "name": "Hyarel",
+    "city": "Pune"
+}
+
+print(student["name"])
+
+
+
+Day 6
+
+Build:
+
+Calculator Agent
+Menu Agent
+
+
+
+Day 7
+
+Build:
+
+Simple AI Agent
+Memory Agent
+
+
+
+First Real AI Agent Roadmap
+
+
+Stage 1
+✓ Python Basics
+✓ Functions
+✓ Dictionaries
+✓ Modules
+
+Stage 2
+✓ APIs
+✓ JSON
+✓ Requests
+
+Stage 3
+✓ OpenAI API
+✓ Prompt Engineering
+
+Stage 4
+✓ Tool Calling
+✓ Memory
+
+Stage 5
+✓ LangChain
+
+Stage 6
+✓ RAG
+
+Stage 7
+✓ CrewAI / Multi-Agent Systems
+
+
+
+
+Focus only on Stage 1 first. Build 4 small projects:
+
+Calculator Agent
+Menu Agent
+Memory Agent
+Terraform Resource Suggestion Agent
+
+
+Once you're comfortable with these, move to OpenAI-powered agents.
+
+
