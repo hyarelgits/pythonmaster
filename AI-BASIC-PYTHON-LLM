@@ -1,0 +1,28 @@
+
+
+-------------
+from openai import OpenAI
+from dotenv import load_dotenv
+import os
+ 
+load_dotenv()
+ 
+client = OpenAI(
+api_key=os.getenv("OPENAI_API_KEY")
+)
+ 
+response = client.responses.create(
+model="gpt-5-nano",
+input="Hello"
+)
+ 
+print(response.output_text)
+
+
+------------
+
+python3 test.py
+
+If the key is correct, you'll get a response from the model.
+
+
