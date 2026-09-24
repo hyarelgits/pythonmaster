@@ -1,0 +1,140 @@
+Copilot
+
+The error in your screenshot is now not a Python code problem. Your code is reaching OpenAI successfully ✅.
+
+The error is:
+
+Plain Text
+openai.RateLimitError: Error code: 429
+You have no credits remaining.
+code: credit_balance_exhausted
+Show more lines
+What this means
+
+Your API key is valid, but the OpenAI API account has:
+
+Plain Text
+$0 credit remaining
+ 
+Show more lines
+
+or
+
+Plain Text
+No billing/payment method configured
+Show more lines
+
+So OpenAI is refusing the API request.
+
+Verify Billing
+
+Open:
+
+Plain Text
+https://platform.openai.com/settings/organization/billing
+Show more lines
+
+Check:
+
+Current Balance
+Payment Method
+Usage
+
+If balance is:
+
+Plain Text
+$0.00
+Show more lines
+
+you need to add credits/payment method.
+
+
+-------------------------
+
+
+
+If You Don't Want to Pay
+
+You can learn AI Agents without OpenAI initially.
+
+Example Local Calculator Agent
+
+
+
+def calculator(a, b):
+    return a + b
+
+while True:
+
+    num1 = int(input("Enter Number 1: "))
+    num2 = int(input("Enter Number 2: "))
+
+    result = calculator(num1, num2)
+
+    print("Result =", result)
+
+    break
+
+python3 main.py
+
+Free Alternatives for Learning
+
+You can use:
+
+Ollama (Runs Locally)
+
+
+
+Install:
+
+
+curl -fsSL https://ollama.com/install.sh | sh
+
+
+
+Run model:
+
+
+ollama run llama3.2
+
+
+import subprocess
+
+question = input("Ask: ")
+
+subprocess.run([
+    "ollama",
+    "run",
+    "llama3.2",
+    question
+])
+
+
+--------------
+
+
+
+Python Basics
+    ↓
+Calculator Agent
+    ↓
+Memory Agent
+    ↓
+Tool Agent
+    ↓
+Ollama (Free LLM)
+    ↓
+OpenAI API
+    ↓
+LangChain
+    ↓
+RAG
+    ↓
+CrewAI---------
+
+
+
+------------
+
+Since you're at the beginner stage, I recommend learning with Ollama + Llama 3.2 first. It avoids API costs and lets you build real AI agents on your VM immediately.
+
