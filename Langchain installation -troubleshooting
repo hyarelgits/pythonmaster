@@ -46,3 +46,53 @@ Expected:
 
 Plain Text
 LangChain working
+
+
+------------------
+langchain.py
+
+from langchain_ollama import ChatOllama
+
+llm = ChatOllama(model="llama3.2")
+
+response = llm.invoke("What is Terraform?")
+
+print(response.content)
+
+----------
+
+
+python3 langchain.py
+
+
+sed -i 's/\xC2\xA0/ /g' langchain.py
+
+python3 langchain.py
+``
+
+mv langchain.py main.py
+
+python3 main.py
+
+pip3 show langchain
+pip3 show langchain-ollama
+
+pip install langchain-ollama
+
+Expected Output
+
+After everything is fixed:
+
+
+What is Terraform?
+ 
+Terraform is an Infrastructure as Code (IaC) tool...
+
+cat -n langchain.py
+
+
+
+
+
+
+
