@@ -1,0 +1,212 @@
+AI Model is any trained machine learning/deep learning system. LLM is an AI model specialized for understanding and generating text. RAG provides external knowledge to an LLM at runtime, and LangChain is a framework that connects LLMs, RAG, tools, APIs, and agents to build complete AI applications.
+
+
+
+AI Model = Your brain
+LLM = Your language and coding knowledge
+RAG = Your ability to look up documentation before answering
+LangChain = The workflow/toolset that helps you use your brain, docs, APIs, and tools together
+
+
+User Question
+      ↓
+  LangChain
+      ↓
+     RAG
+      ↓
+     LLM
+      ↓
+    Answer
+
+
+LangChain
+
+LangChain is a framework for building AI applications using LLMs.
+
+Purpose
+
+Connects LLMs with:
+
+APIs
+Databases
+Documents
+Tools
+Memory
+Agents
+
+
+Without LangChain
+
+
+User
+ ↓
+LLM
+ ↓
+Answer
+
+
+With LangChain
+
+
+User
+ ↓
+LangChain
+ ↓
+LLM
+ ↓
+Database
+ ↓
+API
+ ↓
+Tools
+ ↓
+Final Answer
+
+
+DevOps Bot:
+
+User:
+Show pod status.
+
+LangChain:
+1. Calls Kubernetes API
+2. Collects output
+3. Sends data to LLM
+4. Generates explanation
+``
+
+
+4. RAG (Retrieval-Augmented Generation)
+
+RAG is a technique that allows an LLM to retrieve external knowledge before generating an answer.
+
+
+Problem Without RAG
+
+LLM only knows information from training.
+
+
+Question:
+What is in our company's internal runbook?
+
+LLM:
+I don't know.
+
+
+
+Solution With RAG
+
+
+Question
+    ↓
+Retrieve Documents
+    ↓
+Pass Context
+    ↓
+LLM
+    ↓
+Answer
+
+--------------
+Example
+
+Company Documents
+
+
+runbook.pdf
+terraform-guide.pdf
+k8s-standards.
+
+
+
+User asks:
+
+
+How do I deploy an application?
+
+RAG process:
+
+1. Search documents
+2. Retrieve relevant pages
+3. Send to LLM
+4. Generate answer
+
+
+Complete Relationship
+
+
+
+                 AI MODEL
+                      │
+            ┌─────────┴─────────┐
+            │                   │
+      ML Models             LLMs
+                                │
+                     ┌──────────┴─────────┐
+                     │                    │
+                LangChain             Direct LLM
+                     │
+              ┌──────┴──────┐
+              │             │
+            Tools         RAG
+              │             │
+              └──────┬──────┘
+                     │
+                 AI Agent
+
+
+
+
+Real DevOps Example
+
+
+Suppose you build a Kubernetes troubleshooting assistant.
+
+
+AI Model
+
+
+Machine Learning model predicts:
+Node failure probability = 87%
+
+
+
+LLM
+
+Explains the node issue in plain English.
+``
+
+
+
+RAG
+
+Reads:
+- Internal runbooks
+- Kubernetes documents
+- Company standards
+
+
+LangChain
+
+Connects:
+- LLM
+- Kubernetes API
+- Prometheus
+- Grafana
+- Runbooks
+
+
+Final AI Agent
+
+
+User:
+Why is my pod crashing?
+
+Agent:
+1. Checks Kubernetes
+2. Reads logs
+
+
+
+
+
