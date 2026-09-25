@@ -1,0 +1,230 @@
+
+Logistic Regression Python Example
+
+Problem Statement
+
+Predict whether a student will Pass (1) or Fail (0) based on study hours.
+
+Training Data
+
+
+Hours Studied   Result
+1               Fail (0)
+2               Fail (0)
+3               Fail (0)
+4               Pass (1)
+5               Pass (1)
+6               Pass (1)
+
+
+
+The model will learn:
+
+
+Less study hours  → Fail
+More study hours  → Pass
+
+
+Step 1: Install Libraries
+
+pip install scikit-learn numpy
+
+
+
+
+Step 2: Python Program
+
+
+from sklearn.linear_model import LogisticRegression
+import numpy as np
+
+# Input Data (Study Hours)
+X = np.array([[1], [2], [3], [4], [5], [6]])
+
+# Output Data (Pass=1, Fail=0)
+y = np.array([0, 0, 0, 1, 1, 1])
+
+# Create Model
+model = LogisticRegression()
+
+# Train Model
+model.fit(X, y)
+
+# Predict for a student studying 5 hours
+prediction = model.predict([[5]])
+
+print("Prediction:", prediction[0])
+
+
+--------------
+
+
+
+Output
+
+
+Prediction: 1
+
+
+Meaning:
+
+
+1 = Pass
+``
+
+Understanding Each Line
+Input Data
+
+X = np.array([[1], [2], [3], [4], [5], [6]])
+
+
+
+Study hours of students.
+
+
+Output Data
+
+y = np.array([0, 0, 0, 1, 1, 1])
+
+
+
+Results:
+
+
+0 = Fail
+1 = Pass
+
+
+
+Create Model
+
+
+model = LogisticRegression()
+
+
+Creates an empty Logistic Regression model.
+
+
+Train Model
+
+model.fit(X, y)
+
+
+
+The model learns:
+
+1 Hour → Mostly Fail
+
+6 Hours → Mostly Pass
+
+
+
+
+Predict
+
+prediction = model.predict([[5]])
+
+
+Question:
+
+
+If a student studies for 5 hours,
+will they pass?
+
+
+
+Answer:
+
+
+Pass (1)
+
+
+Predict Probability
+
+The real power of Logistic Regression is probability prediction.
+
+probability = model.predict_proba([[5]])
+
+print(probability)
+
+
+Output:
+
+[[0.18 0.82]]
+
+
+
+
+Meaning:
+
+
+18% chance of Fail
+82% chance of Pass
+
+
+
+So the final prediction is:
+
+
+Pass
+----------------
+
+Real-Life Example: Email Spam Detection
+
+
+Email Features
+      ↓
+Logistic Regression
+      ↓
+Spam (1)
+Not Spam (0)
+
+
+----------------
+
+
+Linear Regression vs Logistic Regression
+Linear Regression
+
+Used when output is a number.
+
+
+Hours Studied → Marks
+House Size → Price
+CPU Trend → Future CPU Usage
+
+
+Example Output:
+
+
+120 Marks
+₹25 Lakh
+75% CPU
+
+Logistic Regression
+
+Used when output is a category.
+
+Pass / Fail
+Spam / Not Spam
+Server Fail / No Fail
+Loan Approve / Reject
+
+Example Output:
+
+Plain Text
+0 = No
+1 = Yes
+
+
+
+
+
+
+
+
+
+
+
+
+
