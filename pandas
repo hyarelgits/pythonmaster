@@ -1,0 +1,529 @@
+Install:
+pip install pandas
+
+
+Import:
+Python
+
+import pandas as pd
+import numpy as np
+
+2. Core Data Structures
+Pandas has two main objects:
+Series (1D)
+Like a single column.
+s = pd.Series([10, 20, 30, 40])
+
+print(s)
+
+Output:
+
+0 10
+1 20
+2 30
+3 40
+dtype: int64
+
+DataFrame (2D)
+Like an Excel table.
+
+df = pd.DataFrame({
+"Name": ["Alice", "Bob", "John"],
+"Age": [23, 30, 40]
+})
+
+print(df)
+``Output:
+Name Age
+0 Alice 23
+1 Bob 30
+2 John 40
+``
+
+3. Creating DataFrames
+From Dictionary
+df = pd.DataFrame({
+"Name": ["A", "B", "C"],
+"Salary": [50000, 70000, 90000]
+})
+``
+
+From List
+data = [
+[1, "A"],
+[2, "B"],
+[3, "C"]
+]
+
+df = pd.DataFrame(data,
+columns=["ID", "Name"])
+
+
+From NumPy
+arr = np.random.randint(1, 100, (5, 3))
+df = pd.DataFrame(
+arr,
+columns=["A", "B", "C"]
+)
+
+4. Reading Files
+CSV
+df = pd.read_csv("employees.csv")
+
+Excel
+df = pd.read_excel("employees.xlsx")
+
+JSON
+Python
+df = pd.read_json("data.json")
+
+SQL
+Python
+df = pd.read_sql(query, connection)
+
+5. Inspecting Data
+Suppose:
+df = pd.read_csv("employees.csv")
+View first rows:
+df.head()
+Last rows:
+df.tail()
+Shape:
+df.shape
+Example:
+(1000, 8) 
+1000 rows, 8 columns.
+
+Column names:
+
+df.columns
+Data types:
+df.dtypes
+Summary info:
+df.info()
+
+
+Statistics:
+df.describe()
+Output includes:
+•	Mean
+•	Min
+•	Max
+•	Standard deviation
+•	Quartiles
+
+
+
+6. Selecting Data
+Assume:
+df
+Name	Age	Salary
+Alice	25	50000
+Bob	35	70000
+
+
+Single column:
+df["Age"]
+
+Multiple columns:
+df[["Name", "Salary"]]
+Returns DataFrame.
+
+
+7. Row Selection
+loc (label based)
+df.loc[0]
+
+Output:
+
+Name Alice
+Age 25
+Salary 50000
+
+
+Rows and columns:
+df.loc[0:2, ["Name", "Salary"]]
+
+iloc (position based)
+df.iloc[0]
+First row.
+df.iloc[0:3, 0:2]
+
+
+
+8. Filtering
+Employees older than 30:
+df[df["Age"] > 30]
+
+Multiple conditions:
+
+df[
+(df["Age"] > 30) &
+(df["Salary"] > 60000)
+]
+
+OR condition:
+df[
+(df["Age"] > 30) |
+(df["Salary"] > 60000)
+]
+
+11. GroupBy (Most Important Topic)
+
+Department Salary
+
+IT 50000
+IT 70000
+HR 40000
+HR 45000
+
+Group:
+df.groupby("Department")["Salary"].mean()
+
+Output:
+HR 42500
+IT 60000
+
+Multiple aggregations:
+
+df.groupby('Department').agg({
+'Salary':['mean','max','sum'],
+'Age':['mean']
+})
+12. Merge and Join
+Very important for interviews.
+Employee table:
+emp
+EmployeeID	Name
+1	John
+2	Sarah
+
+
+
+Department table:
+EmployeeID	Dept
+1	IT
+2	HR
+
+Merge:
+pd.merge(emp, dept, on='EmployeeID')
+Types:
+Inner Join
+pd.merge(df1, df2, how='inner')
+Left Join
+pd.merge(df1, df2, how='left')
+Right Join
+pd.merge(df1, df2, how='right')
+Outer Join
+pd.merge(df1, df2, how='outer')
+
+13. Pivot Tables
+SQL equivalent of aggregation.
+pd.pivot_table(
+df,
+index='Department',
+values='Salary',
+aggfunc='mean'
+)
+
+14. Reshaping Data
+Melt
+Wide → Long
+
+pd.melt(df)
+
+Pivot
+Long → Wide
+df.pivot(
+index='Date',
+columns='Product',
+values='Sales'
+)
+
+
+15. String Operations
+df['Name'].str.upper()
+df['Name'].str.lower()
+Replace:
+df['Name'].str.replace('Mr.', '')
+
+
+17. Apply Function
+def grade(score):
+if score > 80:
+return "A"
+return "B"
+
+df['Grade'] = df['Marks'].apply(grade)
+
+
+18. Lambda Functions
+df['Double'] = df['Value'].apply(
+lambda x: x * 2
+)
+
+
+19. MultiIndex
+Advanced concept.
+df.set_index(['Department','Employee'])
+op
+Department Employee
+IT John
+IT Sam
+HR Sarah
+Access
+df.loc['IT']
+
+20. Performance Optimization
+Avoid loops
+for i in range(len(df)):
+pass
+Good:
+df['Salary'] * 1.1
+
+
+Use Vectorization
+df['Tax'] = df['Salary'] * 0.18
+
+
+21. Advanced Functions
+map()
+city_map = {
+"Pune":"MH",
+"Mumbai":"MH"
+}
+
+df['State'] = df['City'].map(city_map)
+
+
+
+replace()
+df.replace({
+'Male':'M',
+'Female':'F'
+})
+
+
+query()
+df.query('Age > 30 and Salary > 50000')
+
+
+22. Time Series Analysis
+
+
+23. Pandas Interview Questions
+Difference between loc and iloc?
+•	loc → Label based
+•	iloc → Position based
+Difference between merge and join?
+•	merge() works on columns
+•	join() works on indexes
+Why use groupby?
+To split, aggregate, and combine data.
+What is vectorization?
+Perform operations on entire columns without loops.
+
+
+24. Real-world Project Workflow
+Suppose you receive a sales CSV.
+Step 1
+df = pd.read_csv('sales.csv')
+
+Step 2
+Understand data
+df.info()
+df.describe()
+
+Step 3
+Cleandf.drop_duplicates()
+df.fillna(0)
+
+Step 4
+Transform
+df['Revenue'] = df['Qty'] * df['Price']
+
+Step 5
+Analyze
+df.groupby('Product')['Revenue'].sum()
+
+Step 6
+Export
+df.to_excel('output.xlsx')
+Advanced Topics (Must 
+
+
+
+----------------
+
+
+Why is Pandas required in Python?
+Pandas is a Python library used for data analysis, data manipulation, and handling structured data such as Excel files, CSV files, databases, and tables.
+Think of it this way:
+•	NumPy → Works mainly with arrays and numerical calculations.
+•	Pandas → Works with rows and columns (like Excel spreadsheets).
+________________________________________
+Example Without Pandas
+Suppose you have employee data:
+Python
+employees = [
+["John", 25, 50000],
+["Alice", 30, 60000],
+["Bob", 35, 70000]
+]
+ 
+for emp in employees:
+print(emp)
+Managing and filtering data becomes difficult as data grows.
+________________________________________
+Example With Pandas
+Python
+import pandas as pd
+ 
+data = {
+"Name": ["John", "Alice", "Bob"],
+"Age": [25, 30, 35],
+"Salary": [50000, 60000, 70000]
+}
+ 
+df = pd.DataFrame(data)
+ 
+print(df)
+``
+Show more lines
+Output:
+Plain Text
+Name Age Salary
+0 John 25 50000
+1 Alice 30 60000
+2 Bob 35 70000
+Show more lines
+________________________________________
+1. Read Excel and CSV Files Easily
+Read CSV
+Python
+import pandas as pd
+ 
+df = pd.read_csv("employees.csv")
+print(df)
+Show more lines
+Read Excel
+Python
+df = pd.read_excel("employees.xlsx")
+print(df)
+Show more lines
+This is why Pandas is widely used in real-world projects.
+________________________________________
+2. Filter Data
+Find employees whose salary is greater than 55,000:
+Python
+df[df["Salary"] > 55000]
+Show more lines
+Output:
+Plain Text
+Name Age Salary
+1 Alice 30 60000
+2 Bob 35 70000
+Show more lines
+________________________________________
+3. Calculate Statistics
+Python
+print(df["Salary"].mean())
+print(df["Salary"].max())
+print(df["Salary"].min())
+``
+Show more lines
+Output:
+Plain Text
+60000
+70000
+50000
+Show more lines
+________________________________________
+4. Handle Missing Data
+Python
+df.isnull()
+Show more lines
+Fill missing values:
+Python
+df.fillna(0)
+Show more lines
+________________________________________
+5. Sort Data
+Python
+df.sort_values("Salary", ascending=False)
+Show more lines
+Output:
+Plain Text
+Name Age Salary
+2 Bob 35 70000
+1 Alice 30 60000
+0 John 25 50000
+Show more lines
+________________________________________
+6. Create Reports
+Group employees by department:
+Python
+df.groupby("Department")["Salary"].mean()
+Show more lines
+This is heavily used in:
+•	Business Analytics
+•	Reporting
+•	Dashboards
+•	Data Science
+________________________________________
+7. Foundation for Data Science and AI
+Pandas is commonly used before Machine Learning:
+Python
+import pandas as pd
+ 
+df = pd.read_csv("customers.csv")
+ 
+X = df[["Age", "Income"]]
+y = df["Purchased"]
+Show more lines
+Then the processed data is passed to Scikit-Learn, TensorFlow, or PyTorch.
+________________________________________
+Pandas Data Structures
+Series (1-D)
+Python
+import pandas as pd
+ 
+s = pd.Series([10, 20, 30])
+print(s)
+Show more lines
+DataFrame (2-D)
+Python
+df = pd.DataFrame({
+"Name": ["John", "Alice"],
+"Age": [25, 30]
+})
+Show more lines
+A DataFrame is the most commonly used Pandas object.
+________________________________________
+Real-World Example
+Suppose you download a sales report:
+Plain Text
+sales.xlsx
+Show more lines
+Using Pandas you can:
+1.	Read the Excel file
+2.	Remove duplicate records
+3.	Fill missing values
+4.	Calculate total sales
+5.	Generate summary reports
+6.	Export results back to Excel
+Python
+df = pd.read_excel("sales.xlsx")
+ 
+df.drop_duplicates(inplace=True)
+ 
+total_sales = df["Amount"].sum()
+ 
+print(total_sales)
+ 
+df.to_excel("output.xlsx")
+Show more lines
+________________________________________
+Simple Interview Answer
+Pandas is a Python library used for data analysis and data manipulation. It helps read, clean, filter, transform, analyze, and export structured data from sources such as CSV files, Excel files, and databases. It is widely used in Data Science, Machine Learning, Business Analytics, and Reporting.
+________________________________________
