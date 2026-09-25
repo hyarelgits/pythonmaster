@@ -1,0 +1,201 @@
+Linear Regression Python Example
+
+
+Let's predict a student's marks based on study hours.
+
+
+Training Data
+
+
+Hours Studied → Marks
+1             → 20
+2             → 40
+3             → 60
+4             → 80
+5             → 100
+
+
+
+We want to predict:
+
+
+If a student studies 6 hours,
+what marks can be expected?
+
+
+
+Step 1: Install Required Library
+
+pip install scikit-learn numpy
+
+
+
+Step 2: Python Program
+
+
+
+
+from sklearn.linear_model import LinearRegression
+import numpy as np
+
+# Input Data (X)
+X = np.array([[1], [2], [3], [4], [5]])
+
+# Output Data (Y)
+y = np.array([20, 40, 60, 80, 100])
+
+# Create Model
+model = LinearRegression()
+
+# Train Model
+model.fit(X, y)
+
+# Predict for 6 hours
+prediction = model.predict([[6]])
+
+print("Predicted Marks:", prediction[0])
+
+
+
+
+Output
+
+Predicted Marks: 120.0
+
+
+Understanding Each Line
+Import Libraries
+
+
+
+from sklearn.linear_model import LinearRegression
+import numpy as np
+
+
+
+numpy
+
+Used to create arrays.
+
+LinearRegression
+
+Machine Learning algorithm.
+
+
+
+Create Input Data
+
+X = np.array([[1], [2], [3], [4], [5]])
+
+
+
+Meaning:
+Student 1 studied 1 hour
+Student 2 studied 2 hours
+
+
+Create Output Data
+
+y = np.array([20, 40, 60, 80, 100])
+
+
+Meaning:
+
+1 hour → 20 marks
+2 hours → 40 marks
+3 hours → 60 marks
+...
+
+
+
+Create the Model
+
+model = LinearRegression()
+
+
+Creates an empty Linear Regression model.
+
+
+
+---
+
+
+
+
+Train the Model
+
+model.fit(X, y)
+
+The model learns:
+
+Hours ↑
+Marks ↑
+
+
+Pattern learned:
+
+Marks = 20 × Hours
+
+Predict New Value
+
+prediction = model.predict([[6]])
+
+
+Input:
+
+
+6 Hours
+
+Model calculates:
+
+20 × 6 = 120
+
+
+
+Print Result
+
+print(prediction[0])
+
+Output:
+
+120
+
+------------------
+
+
+
+Another Example: House Price Prediction
+
+
+from sklearn.linear_model import LinearRegression
+import numpy as np
+
+# House Size (sq.ft)
+X = np.array([[1000], [1200], [1500], [1800], [2000]])
+
+# House Price
+y = np.array([10, 12, 15, 18, 20])
+
+model = LinearRegression()
+
+model.fit(X, y)
+
+price = model.predict([[2500]])
+
+print("Predicted Price:", price[0], "Lakhs")
+---
+
+
+
+Output
+
+Predicted Price: 25.0 Lakhs
+
+
+
+
+
+
+
+
+
