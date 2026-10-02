@@ -343,6 +343,8 @@ Std: 23.36
 
 import pandas as pd
 import matplotlib.pyplot as plt
+ # reuire to install in system command - pip install matplotlib
+
 
 df = pd.DataFrame({
     "Marks": [85, 90, 45, 70, 35, 95, 60]
