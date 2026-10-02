@@ -1,0 +1,435 @@
+Statistics in Python (Complete Beginner Guide)
+
+Statistics helps us analyze data and understand patterns.
+
+
+For example:
+
+
+Marks = [85, 90, 45, 70, 35, 95, 60]
+
+
+Using statistics, we can find:
+
+Average Marks
+Highest Marks
+Lowest Marks
+Middle Value
+Most Frequent Value
+Spread of Data
+
+
+
+1. Mean (Average)
+
+Formula:
+
+Mean=∑xnMean = \frac{\sum x}{n}Mean=n∑x
+
+
+​marks = [85, 90, 45, 70, 35, 95, 60]
+
+mean = sum(marks) / len(marks)
+
+print(mean)
+
+
+op
+
+68.57
+----------------
+
+
+How Calculation Works
+
+85+90+45+70+35+95+60 = 480
+
+Total Students = 7
+
+480 / 7 = 68.57
+
+
+
+------------
+
+
+
+2. Median (Middle Value)
+
+Median is the center value after sorting.
+
+.py
+
+
+import statistics
+
+marks = [85, 90, 45, 70, 35, 95, 60]
+
+print(statistics.median(marks))
+
+
+
+Sorting
+35 45 60 70 85 90 95
+
+Middle value:
+
+70
+
+Output:
+
+70
+
+-----------
+
+3. Mode (Most Frequent Value)
+
+
+
+.py
+
+
+import statistics
+
+numbers = [1, 2, 2, 3, 4, 2, 5]
+
+print(statistics.mode(numbers))
+
+
+Output:
+
+2
+
+Because:
+2 appears 3 times
+
+------------
+
+
+
+4. Maximum Value
+
+
+
+marks = [85, 90, 45, 70, 35, 95, 60]
+
+print(max(marks))
+
+
+op
+
+95
+
+-----------
+
+
+
+5. Minimum Value
+
+
+
+print(min(marks))
+
+
+print(min(marks))
+
+
+35
+
+
+
+----------
+
+
+
+6. Range
+
+Range = Maximum - Minimum
+
+
+
+marks = [85, 90, 45, 70, 35, 95, 60]
+
+range_value = max(marks) - min(marks)
+
+print(range_value)
+``
+
+
+op
+
+60
+
+
+95 - 35 = 60
+----------
+
+
+7. Variance
+
+Measures how spread out data is.
+
+
+
+
+import numpy as np
+
+marks = [85, 90, 45, 70, 35, 95, 60]
+
+print(np.var(marks))
+
+
+Output:
+
+
+469.38
+
+-------------
+
+
+
+8. Standard Deviation
+
+Most important statistical measure.
+
+Formula:
+
+
+Std Dev = √Variance
+
+Std Dev = √Variance
+
+.py
+
+
+import numpy as np
+
+marks = [85, 90, 45, 70, 35, 95, 60]
+
+print(np.std(marks))
+
+
+
+op
+
+
+21.66
+
+
+meaning
+
+Marks vary around 21 from average.
+
+
+----------
+
+
+
+9. Using Pandas
+
+
+
+.py
+
+import pandas as pd
+
+df = pd.DataFrame({
+    "Marks": [85, 90, 45, 70, 35, 95, 60]
+})
+
+print(df)
+
+
+op
+
+   Marks
+0     85
+1     90
+2     45
+3     70
+4     35
+5     95
+6     60
+
+
+
+-----------
+
+
+
+
+print(df.describe())
+`
+
+
+
+           Marks
+count   7.000000
+mean   68.571429
+std    23.362321
+min    35.000000
+25%    52.500000
+50%    70.000000
+75%    87.500000
+max    95.000000
+
+
+
+
+-----------
+
+
+
+11. Probability + Statistics Example
+
+Suppose pass marks are 40.
+
+
+
+
+
+import pandas as pd
+
+df = pd.DataFrame({
+    "Marks": [85, 90, 45, 70, 35, 95, 60]
+})
+
+passing_students = len(df[df["Marks"] >= 40])
+
+total_students = len(df)
+
+probability = passing_students / total_students
+
+print("Probability:", probability)
+
+print("Mean:", df["Marks"].mean())
+
+print("Median:", df["Marks"].median())
+
+print("Std:", df["Marks"].std())
+``
+
+
+op
+
+Probability: 0.857
+
+Mean: 68.57
+
+Median: 70
+
+Std: 23.36
+
+--------------
+
+
+
+12. Visualization
+
+.py
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "Marks": [85, 90, 45, 70, 35, 95, 60]
+})
+
+plt.hist(df["Marks"])
+plt.title("Marks Distribution")
+plt.xlabel("Marks")
+plt.ylabel("Students")
+plt.show()
+
+
+This creates a histogram showing how marks are distributed.
+
+-------------
+
+
+Statistics Used in Machine Learning
+Linear Regression
+
+Uses:
+
+
+Mean
+Variance
+Correlation
+
+
+Logistic Regression
+
+Uses:
+
+Probability
+Statistics
+``
+
+
+Data Science
+
+Uses:
+
+
+Mean
+Median
+Mode
+Standard Deviation
+
+
+-----------
+
+
+
+What is Median?
+Python
+Middle value after sorting.
+What is Mode?
+Python
+Most frequent value.
+What is Variance?
+Python
+Measures data spread.
+What is Standard Deviation?
+Python
+Square root of variance.
+
+
+
+--------
+
+
+Complete Example
+
+.py
+
+import pandas as pd
+
+df = pd.DataFrame({
+    "Marks": [85, 90, 45, 70, 35, 95, 60]
+})
+
+print("Mean:", df["Marks"].mean())
+print("Median:", df["Marks"].median())
+print("Maximum:", df["Marks"].max())
+print("Minimum:", df["Marks"].min())
+print("Standard Deviation:", df["Marks"].std())
+
+print(df.describe())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
