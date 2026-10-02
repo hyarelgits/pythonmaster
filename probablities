@@ -1,0 +1,229 @@
+As a Data Scientist or AI Engineer, probability is used in:
+
+Machine Learning
+Logistic Regression
+Naive Bayes
+Deep Learning
+Prediction Models
+Risk Analysis
+Generative AI Models
+
+Think of probability as the foundation of AI and Machine Learning.
+
+
+-----------------
+
+Probability in Python - Full Basic Example (Beginner Friendly)
+What is Probability?
+
+Probability tells us the chance of an event happening.
+
+Formula:
+
+Probability=Favorable OutcomesTotal OutcomesProbability = \frac{Favorable\ Outcomes}{Total\ Outcomes}Probability=Total OutcomesFavorable Outcomes​
+
+Example:
+
+If you throw a dice,
+
+Total outcomes = 6 (1,2,3,4,5,6)
+Favorable outcome for getting 6 = 1
+
+
+
+
+Probability of getting 6 = 1/6 = 0.1667
+
+
+------------------------------
+
+Example 1: Probability Using Python
+
+
+favorable = 1
+total = 6
+
+probability = favorable / total
+
+print(probability)
+
+
+
+Output:
+
+0.16666666666666666
+
+
+
+
+---------------------
+
+
+
+
+
+Example 2: Coin Toss Probability
+
+
+
+A coin has:
+
+
+Heads
+Tails
+
+Probability of getting Heads:
+-----------
+.py
+
+heads = 1
+total_outcomes = 2
+
+probability = heads / total_outcomes
+
+print(probability)
+
+op
+
+0.5
+
+
+------------------
+
+
+Meaning:
+
+
+50% chance of Heads
+
+
+-----------
+
+
+Example 4: Calculate Probability of Even Number
+
+Even numbers in dice:
+
+
+1 2, 4, 6
+
+Favorable outcomes = 3
+
+
+Total outcomes = 6
+
+
+probability = 3 / 6
+
+print(probability)
+
+Output:
+
+0.5
+
+
+-------------
+
+
+Example 6: Using NumPy
+
+
+.py
+
+import numpy as np
+
+dice_rolls = np.random.randint(1, 7, 10000)
+
+probability_of_six = np.sum(dice_rolls == 6) / 10000
+
+print(probability_of_six)
+``
+Output:
+
+0.167
+
+---------------
+
+
+Real Data Science Example
+
+
+
+.py
+
+import pandas as pd
+
+df = pd.DataFrame({
+    "Marks": [85, 90, 45, 70, 35, 95, 60]
+})
+
+passing_students = len(df[df["Marks"] >= 40])
+
+total_students = len(df)
+
+probability = passing_students / total_students
+
+print(probability)
+
+
+
+----------
+
+Output:
+
+0.857
+
+
+Meaning:
+
+85.7% students passed
+
+
+
+---
+
+
+Python Libraries Used
+
+
+import random
+import numpy as np
+import pandas as pd
+
+
+
+As a Data Scientist or AI Engineer, probability is used in:
+
+Machine Learning
+Logistic Regression
+Naive Bayes
+Deep Learning
+Prediction Models
+Risk Analysis
+Generative AI Models
+
+Think of probability as the foundation of AI and Machine Learning. Before learning algorithms like Logistic Regression, Naive Bayes, and Neural Networks, it's important to understand probability concepts well.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
