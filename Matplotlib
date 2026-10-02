@@ -1,0 +1,358 @@
+What is Matplotlib?
+
+Matplotlib is a Python library used to create:
+
+Line Charts
+Bar Charts
+Pie Charts
+Histograms
+Scatter Plots
+Subplots
+Data Visualization
+
+
+pip3 install matplotlib
+
+Import:
+
+import matplotlib.pyplot as plt
+
+-----------
+
+
+1. Line Chart
+
+Used to show trends over time.
+
+
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5]
+y = [10, 20, 15, 25, 30]
+
+plt.plot(x, y)
+
+plt.title("Sales Trend")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+
+plt.show()
+
+
+----
+
+
+Output:
+
+A line connecting all points.
+
+
+---------
+
+
+2. Bar Chart
+
+Used to compare categories.
+
+
+
+import matplotlib.pyplot as plt
+
+subjects = ["Math", "Science", "English"]
+marks = [85, 90, 75]
+
+plt.bar(subjects, marks)
+
+plt.title("Student Marks")
+plt.xlabel("Subjects")
+plt.ylabel("Marks")
+
+plt.show()
+
+
+
+------------
+
+
+3. Pie Chart
+
+Used to show percentages.
+
+import matplotlib.pyplot as plt
+
+sizes = [40, 30, 20, 10]
+
+labels = ["IT", "HR", "Finance", "Sales"]
+
+plt.pie(sizes, labels=labels, autopct="%1.1f%%")
+
+plt.show()
+
+
+
+Output:
+
+
+Circular pie chart
+
+
+
+-------------
+
+
+
+4. Histogram
+
+Shows data distribution.
+
+
+
+.py
+
+import matplotlib.pyplot as plt
+
+marks = [85, 90, 45, 70, 35, 95, 60]
+
+plt.hist(marks)
+
+plt.title("Marks Distribution")
+plt.xlabel("Marks")
+plt.ylabel("Students")
+
+plt.show()
+
+-------------
+
+
+5. Scatter Plot
+
+Shows relationship between two variables.
+
+
+
+import matplotlib.pyplot as plt
+
+height = [150, 160, 170, 180, 190]
+weight = [50, 60, 70, 80, 90]
+
+plt.scatter(height, weight)
+
+plt.xlabel("Height")
+plt.ylabel("Weight")
+
+plt.show()
+
+
+
+-----------
+
+
+
+6. Customize Line Color
+
+
+
+
+import matplotlib.pyplot as plt
+
+x = [1,2,3,4]
+y = [10,20,30,40]
+
+plt.plot(x, y, color="red")
+
+plt.show()
+
+
+
+Colors:
+
+red
+blue
+green
+yellow
+black
+
+-----------
+
+
+7. Line Style
+
+
+plt.plot(x, y, linestyle="--")
+
+op
+
+"-"   Solid
+"--"  Dashed
+":"   Dotted
+"-."  Dash Dot
+
+
+-------------
+
+
+8. Markers
+
+plt.plot(x, y, marker="o")
+plt.show()
+
+
+
+
+Output:
+
+Point circles appear on chart.
+
+
+Markers:
+
+o
+*
+s
+^
++
+
+
+
+----------
+
+
+9. Grid
+
+
+plt.plot(x, y)
+
+plt.grid(True)
+
+plt.show()
+
+
+
+Output:
+
+
+
+Graph with grid lines.
+``
+
+
+
+
+-----------
+
+
+
+10. Multiple Lines
+
+.py
+
+import matplotlib.pyplot as plt
+
+months = [1,2,3,4]
+
+sales1 = [10,20,30,40]
+sales2 = [15,25,35,45]
+
+plt.plot(months, sales1, label="Product A")
+plt.plot(months, sales2, label="Product B")
+
+plt.legend()
+
+plt.show()
+
+----
+
+
+
+11. Save Chart as Image
+
+Useful in Linux Server/VM.
+
+
+plt.plot([1,2,3],[10,20,30])
+
+plt.savefig("chart.png")
+
+
+File:
+
+chart.png
+
+
+------------
+
+
+12. Subplots
+
+Show multiple charts.
+
+
+.py
+
+import matplotlib.pyplot as plt
+
+plt.subplot(1,2,1)
+plt.plot([1,2,3],[10,20,30])
+plt.title("Chart 1")
+
+plt.subplot(1,2,2)
+plt.plot([1,2,3],[30,20,10])
+plt.title("Chart 2")
+
+plt.show()
+
+
+------------
+
+13. Using Pandas DataFrame
+.py
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "Month": [1,2,3,4],
+    "Sales": [100,200,150,300]
+})
+
+plt.plot(df["Month"], df["Sales"])
+
+plt.show()
+
+
+--------------
+
+
+14. Real Data Science Example
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "Marks": [85,90,45,70,35,95,60]
+})
+
+plt.hist(df["Marks"], bins=5)
+
+plt.title("Student Marks Analysis")
+plt.xlabel("Marks")
+plt.ylabel("Number of Students")
+
+plt.grid(True)
+
+plt.show()
+
+
+
+
+
+
+
+--------
+
+
+
+
+
+
+
