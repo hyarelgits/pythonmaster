@@ -38,8 +38,20 @@ op
 
 68.57
 ----------------
+import statistics
+
+marks = [85, 90, 45, 70, 35, 95, 60]
+
+print("Sum     :", sum(marks))
+print("Count   :", len(marks))
+print("Mean    :", statistics.mean(marks))
+print("Median  :", statistics.median(marks))
+print("Maximum :", max(marks))
+print("Minimum :", min(marks))
 
 
+
+-----------------
 How Calculation Works
 
 85+90+45+70+35+95+60 = 480
