@@ -1,0 +1,2020 @@
+TensorFlow
+
+
+First, What is AI?
+
+Imagine you want a computer to learn like a human.
+
+Example:
+
+You show a child:
+
+Cat 🐱
+Cat 🐱
+Cat 🐱
+
+After seeing many cats, the child learns:
+
+"This is a cat."
+
+AI works the same way.
+
+-------------
+
+
+What is TensorFlow?
+
+TensorFlow is a tool that helps us teach computers.
+
+Think of it like this:
+
+Plain Text
+Teacher = You
+Student = Computer
+Notebook = TensorFlow
+
+Without TensorFlow:
+
+Learning AI is very difficult.
+
+With TensorFlow:
+
+TensorFlow does the hard work for you.
+
+
+---------------------------
+
+
+Real-Life Example
+
+Suppose you want to predict house prices.
+
+You have data:
+
+
+Size      Price
+1000 sqft  20 lakh
+1500 sqft  30 lakh
+2000 sqft  40 lakh
+``
+
+
+You give this data to TensorFlow.
+
+TensorFlow learns:
+
+Plain Text
+Bigger House = Higher Price
+
+Now if you enter:
+
+Plain Text
+1800 sqft
+
+TensorFlow predicts:
+
+Plain Text
+36 lakh
+
+This is Machine Learning.
+
+------------------------
+
+
+
+
+Why Use TensorFlow?
+
+TensorFlow helps in:
+
+✅ Image Recognition
+
+Plain Text
+Cat or Dog?
+
+✅ Voice Recognition
+
+Plain Text
+Hey Google
+
+✅ Chatbots
+
+Plain Text
+ChatGPT
+
+✅ Recommendation Systems
+
+Plain Text
+Amazon Recommendations
+Netflix Recommendations
+
+✅ Fraud Detection
+
+Plain Text
+Banking Transactions
+
+
+-------------
+
+
+What is a Tensor?
+
+Don't worry about the big name.
+
+A Tensor is simply data.
+
+Single Number
+Python
+5
+
+Tensor:
+
+[5]
+List of Numbers
+
+
+Python
+[1,2,3]
+
+Tensor:
+
+[1 2 3]
+Table
+
+
+Python
+[
+[1,2],
+[3,4]
+]
+
+Also a Tensor.
+
+So remember:
+
+Tensor = Data
+
+
+-----------------
+
+
+
+Simple TensorFlow Example
+
+
+
+import tensorflow as tf
+
+x = tf.constant([1,2,3])
+
+print(x)
+
+
+Output:
+
+
+[1 2 3]
+
+Here:
+
+tf.constant()
+
+means create data.
+
+
+----------------
+
+
+
+What is a Model?
+
+Model = Brain of AI
+
+Example:
+
+Plain Text
+Data
+↓
+Learning
+↓
+Model
+↓
+Prediction
+
+TensorFlow creates this brain.
+
+
+------------
+
+
+Daily Life Example
+
+Suppose you want to teach:
+
+Plain Text
+Hours Studied → Exam Marks
+
+
+Data:
+
+Plain Text
+1 hour → 30 marks
+2 hours → 50 marks
+3 hours → 70 marks
+
+
+
+TensorFlow learns:
+
+Plain Text
+More Study = More Marks
+
+Now:
+
+Plain Text
+4 hours
+
+Prediction:
+
+Plain Text
+90 marks
+
+
+
+
+---------------
+
+
+Deep Learning
+
+Imagine a human brain.
+
+Plain Text
+Input
+↓
+Brain
+↓
+Decision
+
+In AI:
+
+Plain Text
+Input
+↓
+Neural Network
+↓
+Output
+
+A Neural Network is a mini artificial brain.
+
+TensorFlow helps create these brains.
+
+
+----------------------
+
+
+
+TensorFlow + Python
+
+TensorFlow works mainly with Python.
+
+Python
+import tensorflow as tf
+
+This line tells Python:
+
+"I want to use TensorFlow."
+
+
+-------------
+
+
+Simple Learning Roadmap
+
+Since you are a beginner, follow this order:
+
+Step 1
+
+Learn Python
+
+Python
+Variables
+Loops
+Functions
+Lists
+Step 2
+
+Learn NumPy
+
+Python
+Arrays
+Matrix Operations
+Step 3
+
+Learn Pandas
+
+Python
+Read Excel
+Read CSV
+Filter Data
+Step 4
+
+Learn Matplotlib
+
+Python
+Graphs
+Charts
+Step 5
+
+Learn Statistics
+
+Plain Text
+Mean
+Median
+Mode
+Probability
+Step 6
+
+Learn Machine Learning
+
+Plain Text
+Linear Regression
+Classification
+Step 7
+
+Learn TensorFlow
+
+Plain Text
+Neural Networks
+Deep Learning
+Step 8
+
+Learn Generative AI
+
+Plain Text
+LLMs
+ChatGPT
+OpenAI
+LangChain
+Easy Summary
+
+Think of it like this:
+
+Plain Text
+Data = Books
+TensorFlow = School
+Model = Student
+Training = Studying
+Prediction = Exam Result
+
+So in one sentence:
+
+TensorFlow is a Python library that helps computers learn from data and make predictions, just like a student learns from examples and answers new questions.
+
+Since you're new to AI, I recommend:
+
+Python Basics
+NumPy
+Pandas
+Matplotlib
+Statistics
+Scikit-Learn
+TensorFlow
+
+
+---------------
+
+examples
+
+Add Numbers
+Python
+
+.py 
+
+import tensorflow as tf
+ 
+a = tf.constant(10)
+b = tf.constant(20)
+ 
+c = a + b
+ 
+print(c)
+
+Output:
+
+Plain Text
+30
+ 
+
+TensorFlow can perform calculations on data.
+
+----
+
+Basic TensorFlow Program
+
+
+import tensorflow as tf
+
+name = tf.constant("Hyarel")
+
+print(name)
+
+
+
+op
+
+hyarel
+
+
+-----
+
+
+
+Level 1 Summary
+
+Remember these 5 points:
+
+1. TensorFlow
+Tool used for AI and Machine Learning.
+2. Tensor
+Tensor = Data
+3. Model
+Model = Brain of AI
+4. Training
+Teaching the AI using data.
+5. Prediction
+AI gives answers for new data.
+
+Easy Formula
+Data
+↓
+TensorFlow
+↓
+Model Training
+↓
+Prediction
+-----
+
+
+TensorFlow Level 2: Build Your First AI Model
+
+In Level 1, you learned:
+
+✅ Tensor = Data
+ ✅ Model = Brain of AI
+ ✅ Training = Teaching AI
+ ✅ Prediction = AI Answer
+
+
+
+---------------
+
+
+
+
+Step 1: Import TensorFlow
+Python
+import tensorflow as tf
+import numpy as np
+Meaning
+Python
+tensorflow
+
+For AI.
+
+Python
+numpy
+
+For handling numbers.
+
+
+Step 2: Create Data
+
+hours = np.array([1,2,3,4], dtype=float)
+
+marks = np.array([30,50,70,90], dtype=float)
+
+
+
+Here:
+
+hours = Input
+marks = Output
+
+
+Step 3: Create AI Model
+
+
+model = tf.keras.Sequential([
+    tf.keras.layers.Dense(units=1)
+])
+
+
+
+Simple meaning:
+
+Create a small AI brain
+having 1 neuron.
+
+
+Step 4: Compile Model
+
+
+model.compile(
+    optimizer='sgd',
+    loss='mean_squared_error'
+)
+
+
+Optimizer
+
+
+Helps AI learn better.
+``
+
+Loss
+
+
+Measures mistakes.
+
+
+Example:
+
+Actual Marks:    90
+Predicted Marks: 70
+
+
+
+Error:
+20 Marks
+
+TensorFlow tries to reduce this error.
+
+-----------------------
+
+
+Step 5: Train the Model
+
+
+
+model.fit(hours, marks, epochs=500)
+
+
+
+What Happens?
+
+Epoch 1
+
+AI learns little
+
+Epoch 100
+
+AI learns pattern properly
+
+
+Think of it as:
+
+Student reading same book 500 times.
+
+
+
+-------------
+
+
+Step 6: Prediction
+
+
+print(model.predict([5]))
+
+Output:
+
+Approximately 110
+
+AI learned:
+
+
+More Hours = More Marks
+
+
+---------------------
+
+
+
+Complete Program
+
+
+.py
+
+
+import tensorflow as tf
+import numpy as np
+
+hours = np.array([1,2,3,4], dtype=float)
+marks = np.array([30,50,70,90], dtype=float)
+
+model = tf.keras.Sequential([
+    tf.keras.layers.Dense(units=1)
+])
+
+model.compile(
+    optimizer='sgd',
+    loss='mean_squared_error'
+)
+
+model.fit(hours, marks, epochs=500)
+
+prediction = model.predict([5])
+
+print("Predicted Marks:", prediction)
+
+
+
+---------
+
+
+How TensorFlow Thinks
+
+Input Data
+     ↓
+Train Model
+     ↓
+Find Pattern
+     ↓
+Store Knowledge
+     ↓
+Prediction
+
+
+-------
+
+
+For our example:
+
+
+1 → 30
+2 → 50
+3 → 70
+4 → 90
+
+
+TensorFlow discovers:
+
+
+Marks = (Hours × 20) + 10
+
+
+Then:
+
+5 × 20 + 10
+
+
+Result:
+
+
+110
+
+
+------------
+
+
+Input data.
+
+Hours Studied
+
+
+Label
+
+Output data.
+
+Marks
+
+
+Model
+
+AI brain.
+
+Training
+
+Teaching AI using examples.
+
+Prediction
+
+Answer for new data.
+
+Epoch
+
+Number of learning rounds.
+
+
+
+-------------
+
+
+Level 2 Summary
+
+
+Data
+ ↓
+Create Model
+ ↓
+Compile Model
+ ↓
+Train Model
+ ↓
+Predict
+
+
+Remember This Formula
+
+
+Data
+ ↓
+Model
+ ↓
+Compile
+ ↓
+Fit (Train)
+ ↓
+Predict
+
+
+
+This is the foundation of almost every TensorFlow project. After Level 2, the next step is Level 3: Neural Networks, Dense Layers, Activation Functions (ReLU), and how AI actually learns inside the model. 🚀
+
+
+-----------------
+
+
+
+
+TensorFlow Level 3: Neural Networks (The Brain of AI)
+
+Great! 🎉
+
+In Level 2, you created a simple AI model.
+
+Now let's understand how AI learns internally.
+
+
+
+
+What is a Neural Network?
+
+A Neural Network is a computer version of the human brain.
+
+
+
+
+Human Brain
+Plain Text
+Eye
+↓
+Brain
+↓
+Decision
+ 
+
+Example:
+See Apple
+↓
+Brain
+↓
+"This is Apple"
+
+
+Artificial Neural Network
+Input
+↓
+Neural Network
+↓
+Output
+
+Example:
+
+Study Hours
+↓
+Neural Network
+↓
+Predicted Marks
+
+-----------
+
+
+
+
+Neuron
+
+The smallest unit of a Neural Network.
+
+Think of it as a tiny decision-maker.
+
+Input
+↓
+Neuron
+↓
+Output
+
+Example:
+
+Hours = 5
+↓
+Neuron
+↓
+Marks = 100
+Neural Network Structure
+Input Layer
+↓
+Hidden Layer
+↓
+Output Layer
+
+
+Input Layer
+
+This receives data.
+
+Example:
+
+Age = 25
+Experience = 3 years
+
+Input Layer receives:
+
+25, 3
+Hidden Layer
+
+This is where learning happens.
+
+Input
+↓
+Calculations
+↓
+Patterns Found
+
+The more hidden layers:
+
+Smarter Model
+Output Layer
+
+Final answer.
+
+Example:
+
+Input:
+Age = 25
+Experience = 3
+ 
+Output:
+Salary = 50000
+
+
+---------------
+
+
+
+Visualization
+
+
+      Input Layer
+
+        Hours
+
+          |
+          V
+
+     Hidden Layer
+
+    O    O    O
+
+          |
+          V
+
+     Output Layer
+
+        Marks
+
+
+---------------
+
+
+
+Dense Layer
+
+In TensorFlow most beginners start with:
+
+Python
+Dense()
+
+Dense means:
+
+Every neuron connects
+to every neuron.
+
+Example:
+
+Python
+tf.keras.layers.Dense(10)
+``
+
+Meaning:
+
+Create 10 neurons
+
+
+
+--------------
+
+
+First Neural Network
+
+
+model = tf.keras.Sequential([
+    tf.keras.layers.Dense(10),
+    tf.keras.layers.Dense(1)
+])
+
+
+
+Explanation:
+
+
+10 neurons in hidden layer
+1 neuron in output layer
+
+
+
+---------
+
+
+
+Activation Function
+
+This is the decision-making power.
+
+Without activation:
+
+
+AI becomes very weak.
+
+With activation:
+
+
+AI can learn complex patterns.
+
+
+------------------
+
+
+ReLU Activation
+
+Most popular activation function.
+
+Python
+activation='relu'
+
+Example:
+
+Python
+Dense(10, activation='relu')
+
+
+-----------------
+
+
+
+How ReLU Works
+Plain Text
+Negative Number → 0
+ 
+Positive Number → Same Number
+
+Examples:
+
+Plain Text
+-5 → 0
+-2 → 0
+10 → 10
+20 → 20
+
+
+
+--------------
+
+
+
+Why ReLU?
+
+Without ReLU:
+
+AI learns slowly
+``
+
+With ReLU:
+
+AI learns quickly
+
+That is why most Deep Learning models use ReLU.
+
+
+-------------
+
+
+
+
+Building Better Model
+
+
+model = tf.keras.Sequential([
+    tf.keras.layers.Dense(
+        10,
+        activation='relu'
+    ),
+    tf.keras.layers.Dense(1)
+])
+
+
+---
+
+
+Here:
+
+10 neurons
++
+ReLU activation
++
+1 output neuron
+
+
+-----------------
+
+
+
+Epoch
+
+Epoch means:
+
+How many times AI studies the data.
+
+Example:
+
+Python
+epochs=10
+
+Means:
+
+Read data 10 times
+ 
+Student Example
+Read Book Once
+
+Knowledge:
+
+Low
+Read Book 100 Times
+
+Knowledge:
+
+High
+
+Same with AI.
+
+
+------------
+Loss Function
+
+Loss means:
+
+How many mistakes AI makes.
+
+Example:
+
+Actual Marks = 90
+Predicted = 70
+
+Loss:
+
+20
+
+-------------------
+
+
+Goal of AI
+Reduce Loss
+
+Example:
+
+Epoch 1 → Loss 50
+Epoch 10 → Loss 30
+Epoch 50 → Loss 10
+Epoch 100 → Loss 2
+
+AI is improving.
+
+Optimizer
+
+Optimizer helps AI learn.
+
+Most common:
+
+Python
+optimizer='adam'
+
+Think of the optimizer as a coach.
+
+Student = AI
+Coach = Optimizer
+
+The coach helps the student improve faster.
+
+
+
+-----------------
+
+
+Complete Level 3 Example
+
+
+
+import tensorflow as tf
+import numpy as np
+
+hours = np.array([1,2,3,4,5], dtype=float)
+
+marks = np.array([30,50,70,90,110], dtype=float)
+
+model = tf.keras.Sequential([
+    tf.keras.layers.Dense(
+        10,
+        activation='relu'
+    ),
+    tf.keras.layers.Dense(1)
+])
+
+model.compile(
+    optimizer='adam',
+    loss='mean_squared_error'
+)
+
+model.fit(
+    hours,
+    marks,
+    epochs=100
+)
+
+print(model.predict([6]))
+
+
+
+Output:
+
+
+
+Approximately 130
+
+
+----------------
+
+
+
+
+Real-World Neural Networks
+Netflix
+
+Input:
+
+Movies Watched
+
+Hidden Layer:
+Find User Interest
+
+Output:
+
+Recommend Movies
+Amazon
+
+Input:
+
+Purchase History
+
+Output:
+
+Recommended Products
+Face Recognition
+
+Input:
+
+Image
+
+Hidden Layer:
+Eye
+Nose
+Face Detection
+
+Output:
+
+Person Identified
+TensorFlow Level 1 → 3 Summary
+
+Plain Text
+Tensor = Data
+Model = AI Brain
+Level 2
+Create Model
+Train Model
+Make Prediction
+Level 3
+Neural Networks
+Neurons
+Dense Layers
+ReLU
+Loss Function
+Optimizer
+Epochs
+Easy Memory Formula
+
+
+Data
+↓
+Neural Network
+↓
+Activation (ReLU)
+↓
+Training (Epochs)
+↓
+Reduce Loss
+↓
+Prediction
+
+🚀 After Level 3, you'll be ready for Level 4: Deep Learning, CNN (Image Recognition), RNN/LSTM (Time Series), and how ChatGPT-style models are built using Transformers.
+
+
+
+-------------------------
+
+
+
+TensorFlow Level 4: Deep Learning, CNN, RNN, LSTM, Transformers
+
+
+
+Congratulations! You're now entering the real AI world.
+
+Up to now:
+
+Level 1 → Tensor & Data
+Level 2 → Build First Model
+Level 3 → Neural Networks
+Level 4 → Deep Learning
+
+
+
+--------------
+
+
+
+What is Deep Learning?
+
+When a Neural Network has many hidden layers, it becomes Deep Learning.
+
+Simple Neural Network
+
+Input
+↓
+Hidden Layer
+↓
+Output
+
+
+
+------------
+
+
+Deep Learning
+
+
+Input
+↓
+Hidden Layer 1
+↓
+Hidden Layer 2
+↓
+Hidden Layer 3
+↓
+Output
+
+
+More layers = More learning ability.
+------------
+
+
+Why Deep Learning?
+
+Traditional programming:
+
+Rules + Data
+↓
+Output
+
+
+
+
+---------
+
+
+
+Example:
+
+Python
+if color == "red":
+print("Apple")
+ 
+
+AI:
+Data + Output
+↓
+Learn Rules
+
+
+The computer learns by itself.
+
+
+------------
+
+
+Types of Deep Learning
+
+There are 3 important models:
+
+1. CNN
+
+For Images
+
+2. RNN/LSTM
+
+For Sequence Data
+
+3. Transformers
+
+For ChatGPT, Gemini, Claude
+
+
+-------------
+
+
+
+1. CNN (Convolutional Neural Network)
+
+CNN works with:
+
+Images
+Videos
+Face Recognition
+
+
+--------
+
+
+Example
+
+Show AI thousands of images:
+
+Plain Text
+Cat
+Cat
+Cat
+Dog
+Dog
+Dog
+
+
+-------------
+
+
+
+Eventually AI learns:
+
+Plain Text
+Shape
+Eyes
+Ears
+Fur
+
+
+---------
+
+
+
+
+Then:
+
+New Image
+ 
+
+AI predicts:
+
+Cat
+
+
+-----------
+
+
+Real Uses
+Mobile Face Unlock
+
+Image
+↓
+CNN
+↓
+Person Identified
+
+
+------------
+
+
+Medical AI
+
+X-Ray
+↓
+CNN
+↓
+Disease Detection
+
+
+
+-------------
+
+
+Self Driving Cars
+
+Road Image
+↓
+CNN
+↓
+Traffic Signal Detection
+
+
+------------
+
+
+CNN Flow
+
+Image
+↓
+Find Features
+↓
+Learn Patterns
+↓
+Classification
+
+-------------
+
+
+Example:
+
+Cat Image
+↓
+Eyes
+Nose
+Ears
+↓
+Cat
+
+
+-------------
+
+
+
+2. RNN (Recurrent Neural Network)
+
+RNN is used when order matters.
+
+Examples:
+
+
+Sentence
+Speech
+Time Data
+
+
+-------------
+
+
+
+Example
+
+Sentence:
+
+Plain Text
+I love learning AI
+
+Words come one after another.
+
+
+
+Words come one after another.
+
+RNN remembers previous words.
+
+I
+↓
+love
+↓
+learning
+↓
+AI
+
+
+Because order matters.
+
+---------------
+
+
+
+Problem With RNN
+
+If the sentence becomes large:
+
+I started learning AI six months ago and now I
+want ...
+
+RNN starts forgetting old information.
+
+
+---------------
+
+
+
+
+3. LSTM (Long Short-Term Memory)
+
+LSTM solves RNN's memory problem.
+
+Think of LSTM as:
+RNN + Better Memory
+``
+Example
+Weather Data
+for 5 years
+
+LSTM remembers important information.
+
+Used in:
+
+Stock Prediction
+Weather Forecasting
+Sales Forecasting
+
+
+
+-----------------
+
+
+Example
+
+Past Sales:
+
+Plain Text
+Jan = 100
+Feb = 150
+Mar = 200
+Apr = 250
+
+LSTM predicts:
+
+May = 300
+
+
+-----------------
+
+
+CNN
+
+Works on:
+
+Images
+Videos
+
+Examples:
+
+Face Detection
+Image Recognition
+LSTM
+
+Works on:
+
+Time Data
+Text
+Speech
+
+Examples:
+
+Stock Prediction
+Weather Forecasting
+
+
+-----------
+
+
+
+Transformers (Most Important)
+
+Today almost every modern AI uses Transformers.
+
+Examples:
+
+ChatGPT
+Gemini
+Claude
+Copilot
+
+
+
+Why Transformers?
+
+Old models:
+
+RNN
+LSTM
+
+were slow for huge text.
+
+Transformers process information much faster.
+
+
+
+--------------
+
+
+Example
+
+Sentence:
+
+Terraform is used to deploy cloud resources.
+
+Transformer understands:
+
+Plain Text
+Terraform
+Cloud
+Deploy
+Resources
+
+and their relationships.
+
+What ChatGPT Uses
+
+Huge Text Data
+↓
+Transformer
+↓
+LLM
+↓
+ChatGPT
+``
+What is an LLM?
+
+LLM = Large Language Model
+
+Examples:
+
+GPT
+Claude
+Gemini
+Llama
+
+Think of an LLM as:
+
+A giant neural network
+trained on massive text data.
+
+
+----------------
+
+
+
+TensorFlow and Deep Learning
+
+TensorFlow provides ready-made layers.
+
+
+
+model = tf.keras.Sequential([
+    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(64, activation='relu'),
+    tf.keras.layers.Dense(1)
+])
+
+
+
+Here:
+
+
+128 neurons
+ ↓
+64 neurons
+ ↓
+Output
+
+
+This is Deep Learning because multiple layers exist.
+
+
+------------
+
+
+
+TensorFlow Career-Oriented Examples
+CNN Project
+
+
+Upload Image
+   ↓
+CNN Model
+   ↓
+Cat or Dog
+
+
+---------
+
+
+LSTM Project
+
+
+Sales Data
+   ↓
+LSTM
+   ↓
+Next Month Prediction
+
+
+Transformer Project
+
+
+User Question
+    ↓
+Transformer
+    ↓
+AI Answer
+
+
+--------
+
+
+For Your Background
+
+Since you're learning:
+
+
+
+Python
+NumPy
+Pandas
+Matplotlib
+Statistics
+AWS
+Terraform
+Kubernetes
+
+
+------
+
+
+Your AI roadmap should be:
+
+Python
+ ↓
+NumPy
+ ↓
+Pandas
+ ↓
+Statistics
+ ↓
+Scikit-Learn
+ ↓
+TensorFlow Basics
+ ↓
+Deep Learning
+ ↓
+CNN
+ ↓
+LSTM
+ ↓
+Transformers
+ ↓
+LLMs
+ ↓
+LangChain
+ ↓
+AI Agents
+ ↓
+MLOps
+(AWS + Docker + Kubernetes)
+
+
+
+------------------
+
+
+
+Level 4 Quick Summary
+CNN
+Images
+Face Recognition
+Object Detection
+RNN
+Text
+Speech
+Sequence Data
+LSTM
+RNN with Better Memory
+Stock & Forecast Prediction
+Transformers
+Plain Text
+ChatGPT
+Gemini
+Claude
+Copilot
+LLM
+Large Language Model
+trained on huge amounts of text.
+Easy Memory Formula
+Plain Text
+Image → CNN
+ 
+Time Series → LSTM
+ 
+ChatGPT → Transformer → LLM
+
+
+
+
+----------------
+
+tensorflow 
+
+
+.py
+
+
+Python
+import tensorflow as tf
+import numpy as np
+ 
+hours = np.array([1,2,3,4,5], dtype=float)
+marks = np.array([30,45,60,75,90], dtype=float)
+ 
+model = tf.keras.Sequential([
+tf.keras.layers.Dense(1)
+])
+ 
+model.compile(
+optimizer='adam',
+loss='mse'
+)
+ 
+model.fit(hours, marks, epochs=500, verbose=0)
+ 
+prediction = model.predict([6])
+ 
+predicted_marks = prediction[0][0]
+ 
+print(predicted_marks)
+
+
+
+
+-----------------
+
+
+ollma
+
+
+from ollama import chat
+
+response = chat(
+    model='llama3',
+    messages=[
+        {
+            'role': 'user',
+            'content':
+            f'Explain why a student may score {predicted_marks:.2f} marks after studying 6 hours.'
+        }
+    ]
+)
+
+print(response['message']['content'])
+
+
+
+------------------
+
+
+
+combined project
+
+
+import tensorflow as tf
+import numpy as np
+from ollama import chat
+
+hours = np.array([1,2,3,4,5], dtype=float)
+marks = np.array([30,45,60,75,90], dtype=float)
+
+model = tf.keras.Sequential([
+    tf.keras.layers.Dense(1)
+])
+
+model.compile(
+    optimizer='adam',
+    loss='mse'
+)
+
+model.fit(hours, marks, epochs=500, verbose=0)
+
+user_hours = float(input("Enter study hours: "))
+
+prediction = model.predict([user_hours])
+
+predicted_marks = prediction[0][0]
+
+response = chat(
+    model='llama3',
+    messages=[
+        {
+            'role': 'user',
+            'content':
+            f'Explain prediction of {predicted_marks:.2f} marks for a student who studied {user_hours} hours.'
+        }
+    ]
+)
+
+print("\nPredicted Marks:", predicted_marks)
+print("\nAI Explanation:")
+print(response['message']['content'])
+
+
+
+-----------
+
+
+1. User Enters Input
+Enter study hours: 6
+2. TensorFlow Works
+
+TensorFlow uses the training data:
+
+1 Hour → 30 Marks
+2 Hours → 45 Marks
+3 Hours → 60 Marks
+4 Hours → 75 Marks
+5 Hours → 90 Marks
+
+It learns the pattern.
+
+When you enter:
+
+6 Hours
+
+TensorFlow predicts:
+105 Marks
+
+(approximately)
+
+3. Ollama Works
+
+Ollama receives:
+
+Plain Text
+Predicted Marks = 105
+Study Hours = 6
+
+Prompt sent to Ollama:
+
+Plain Text
+Explain why a student who studied 6 hours
+may score 105 marks.
+4. Ollama Generates Explanation
+
+Example output:
+
+Plain Text
+A student who studies for 6 hours is likely
+to score around 105 marks because the model
+learned from previous examples that marks
+increase as study hours increase.
+Final Console Output
+Plain Text
+Enter study hours: 6
+ 
+Predicted Marks: 105
+ 
+AI Explanation:
+ 
+A student who studies for 6 hours is likely
+to score around 105 marks because the model
+learned a positive relationship between
+study time and exam performance.
+
+
+
+
