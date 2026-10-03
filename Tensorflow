@@ -627,6 +627,30 @@ prediction = model.predict([5])
 
 print("Predicted Marks:", prediction)
 
+-------------
+corrected code
+import tensorflow as tf
+import numpy as np
+
+hours = np.array([1,2,3,4,5], dtype=float).reshape(-1,1)
+marks = np.array([30,45,60,75,90], dtype=float).reshape(-1,1)
+
+model = tf.keras.Sequential([
+    tf.keras.layers.Dense(1)
+])
+
+model.compile(
+    optimizer='adam',
+    loss='mean_squared_error'
+)
+
+model.fit(hours, marks, epochs=500)
+
+prediction = model.predict([[6]])
+
+print("Predicted Marks:", prediction)
+
+
 
 
 ---------
